@@ -1,0 +1,49 @@
+.contact-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(20px, 4vw, 56px);
+  padding: 34px 0;
+  border-block: 1px solid rgba(230, 194, 119, .3);
+}
+.contact-icon-link {
+  display: grid;
+  place-items: center;
+  width: clamp(58px, 6vw, 82px);
+  aspect-ratio: 1;
+  padding: 0;
+  border: 1px solid rgba(230, 194, 119, .5);
+  border-radius: 50%;
+  color: var(--gold-soft);
+  background: rgba(6, 21, 33, .65);
+  cursor: pointer;
+  transition: background-color .25s ease, color .25s ease, transform .3s ease;
+}
+.contact-icon-link > svg { width: 32px; height: 32px; }
+.contact-icon-link:last-child > svg { width: 40px; height: 40px; }
+.contact-icon-link:hover { background: var(--gold-soft); color: var(--ink); transform: translateY(-4px); }
+.contact-icon-link:focus-visible { outline: 2px solid var(--gold-soft); outline-offset: 6px; }
+.zalo-dialog {
+  width: min(440px, calc(100vw - 28px));
+  max-height: calc(100svh - 32px);
+  padding: 0;
+  border: 1px solid #c99a4c;
+  border-radius: 12px;
+  background: #071523;
+  color: #f8f4ec;
+  box-shadow: 0 30px 100px #0008;
+}
+.zalo-dialog::backdrop { background: rgba(2, 10, 17, .82); backdrop-filter: blur(6px); }
+.zalo-dialog-content { padding: 20px; }
+.zalo-dialog-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
+.zalo-dialog-heading h2 { margin: 0; font: 500 29px var(--serif); }
+.zalo-dialog-heading button { width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid #e7c98266; border-radius: 50%; color: #e7c982; background: transparent; cursor: pointer; }
+.zalo-dialog-content > img { width: auto; height: auto; max-height: 59svh; max-width: 100%; margin: 0 auto; border-radius: 6px; }
+.zalo-dialog-content > p { margin: 18px 0 12px; font: 400 13px/1.7 var(--sans); color: #dbd8cf; }
+.zalo-dialog-content > a { display: inline-flex; align-items: center; gap: 12px; color: #e7c982; min-height: 44px; border-bottom: 1px solid #e7c98266; font-size: 14px; }
+.zalo-dialog :focus-visible { outline: 2px solid #e7c982; outline-offset: 4px; }
+@media (prefers-reduced-motion: no-preference) {
+  .zalo-dialog[open] { animation: qr-arrive .25s ease-out; }
+  @keyframes qr-arrive { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+}
+@media (max-width: 420px) { .contact-icons { gap: 18px; } .contact-icon-link { width: 58px; } }
